@@ -1,0 +1,23 @@
+CREATE TABLE Note (
+    id INTEGER NOT NULL PRIMARY KEY,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL
+);
+
+getNoteById:
+SELECT *
+FROM Note n
+WHERE id = :id;
+
+getNote:
+SELECT *
+FROM Note n;
+
+insertNote:
+INSERT OR REPLACE
+INTO Note
+VALUES (?, ?, ?);
+
+deleteNote:
+DELETE FROM Note
+WHERE id = :id;
